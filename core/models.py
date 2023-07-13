@@ -48,3 +48,38 @@ class UserAddressInformation(models.Model):
 
     def __str__(self):
         return self.address
+    
+class MarkSheetInformation(models.Model):
+
+    CHOICE_OPTIONS = (
+
+        ('Good', 'Good'),
+
+        ('Average', 'Average'),
+
+        ('Below Average', 'Below Average'),
+
+    )
+
+    user_name = models.CharField(max_length=20)
+
+    math_marks = models.IntegerField()
+
+    english_marks = models.IntegerField()
+
+    teacher_marks = models.CharField(max_length=20, choices=CHOICE_OPTIONS)
+
+    is_sports_team_member = models.BooleanField(default=False)
+
+class SampleMarkSheetInformation(models.Model):
+
+    class TeacherRatingChoices(models.TextChoices):
+        Good = 1
+        Average = 2
+        BelowAverage = 3
+    
+    user_name = models.CharField(max_length=20)
+    math_marks = models.IntegerField()
+    english_marks = models.IntegerField()
+    teacher_marks_choices = models.CharField(max_length=30, choices=TeacherRatingChoices.choices, default=1)
+    is_sports_team_member = models.BooleanField(default=False)

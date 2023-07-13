@@ -3,7 +3,7 @@ from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
-from .models import Profile, Post, LikePost, FollowersCount
+from .models import Profile, Post, LikePost, FollowersCount, UserAddressInformation
 from itertools import chain
 import random
 
@@ -245,3 +245,9 @@ def signin(request):
 def logout(request):
     auth.logout(request)
     return redirect('signin')
+
+def useraddressinformation(request):
+    
+    useraddressinformation_objects = UserAddressInformation.objects.all()
+
+    return render(request, 'useraddress.html', {'useraddress_list': useraddressinformation_objects})

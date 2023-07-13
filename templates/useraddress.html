@@ -1,0 +1,7 @@
+
+{% for address in useraddress_list %}
+{% if address.user != 'admin-new' %}
+    <h1> {{address.user}} </h1>
+    <h1> {{address.address}} </h1>
+{% endif %}
+{% endfor %}
