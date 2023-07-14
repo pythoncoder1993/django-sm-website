@@ -251,3 +251,9 @@ def useraddressinformation(request):
     useraddressinformation_objects = UserAddressInformation.objects.all()
 
     return render(request, 'useraddress.html', {'useraddress_list': useraddressinformation_objects})
+
+def helloworld(request):
+
+    grocery_list = ['eggs', 'bread', 'milk', 'coffee', 'salt', 'sugar']
+
+    return render(request, 'hello.html', {'grocery_items': grocery_list})

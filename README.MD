@@ -27,3 +27,18 @@ pip install pillow or pip3 install pillow
 7. To create superuser: python manage.py createsuperuser
 
 8. To run server: python manage.py runserver
+
+
+Link Views and Templates,
+
+* Create a view
+* Add path related to view in urls.py
+* Create template
+* Link template with view
+
+Models,
+
+* Create models
+* Register the model in admin.py
+* Run makemigrations
+* Run migrate
