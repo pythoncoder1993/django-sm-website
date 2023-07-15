@@ -42,3 +42,5 @@ Models,
 * Register the model in admin.py
 * Run makemigrations
 * Run migrate
+
+Create a view which require user login and that views should list down all the posts in the webiste

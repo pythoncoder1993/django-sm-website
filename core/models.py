@@ -83,3 +83,11 @@ class SampleMarkSheetInformation(models.Model):
     english_marks = models.IntegerField()
     teacher_marks_choices = models.CharField(max_length=30, choices=TeacherRatingChoices.choices, default=1)
     is_sports_team_member = models.BooleanField(default=False)
+
+class Article(models.Model):
+    article_title = models.CharField(max_length=100, default='')
+    article_description = models.CharField(max_length=500, default='')
+    is_article_publish = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.article_title

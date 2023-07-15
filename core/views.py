@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .models import Profile, Post, LikePost, FollowersCount, UserAddressInformation
 from itertools import chain
 import random
+from .forms import ArticleInformation
 
 # Create your views here.
 
@@ -257,3 +258,15 @@ def helloworld(request):
     grocery_list = ['eggs', 'bread', 'milk', 'coffee', 'salt', 'sugar']
 
     return render(request, 'hello.html', {'grocery_items': grocery_list})
+
+@login_required(login_url='signin')
+def post(request):
+    username = request.user.username
+    posts = Post.objects.filter(user=username)
+    return render(request,'post.html', {'posts': posts})
+
+def article(request):
+    context = {}
+    context['form'] = ArticleInformation()
+
+    return render(request, 'article.html', context)

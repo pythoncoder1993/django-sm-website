@@ -10,8 +10,10 @@ urlpatterns = [
     path('profile/<str:pk>', views.profile, name='profile'),
     path('like-post', views.like_post, name='like-post'),
     path('signup', views.signup, name='signup'),
-    path('signin', views.signin, name='signin'),
+    path('signin-new', views.signin, name='signin'),
     path('logout', views.logout, name='logout'),
     path('address', views.useraddressinformation, name='address'),
-    path('world', views.helloworld, name='hello')
+    path('world', views.helloworld, name='hello'),
+    path('post', views.post, name='post'),
+    path('article', views.article, name='article')
 ]
