@@ -15,5 +15,6 @@ urlpatterns = [
     path('address', views.useraddressinformation, name='address'),
     path('world', views.helloworld, name='hello'),
     path('post', views.post, name='post'),
-    path('article', views.article, name='article')
+    path('article', views.article, name='article'),
+    path('newposts', views.newposts, name='newposts')
 ]

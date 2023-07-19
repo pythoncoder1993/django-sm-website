@@ -16,3 +16,14 @@ has context menu
 <h1> {{ post.user }} </h1>
 <h1> {{ post.caption }} </h1>
 {% endfor %} -->
+
+{% for profile in profile_info %}
+<div>
+<h3>{{ profile.bio }}</h3>
+<img src="{{ profile.profileimg.url }}" alt="Profile Image">
+<p>{{ post.location }}</p>
+</div>
+{% empty %}
+<p>No profiles found.</p>
+{% endfor %}
+has context menu

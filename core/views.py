@@ -270,3 +270,8 @@ def article(request):
     context['form'] = ArticleInformation()
 
     return render(request, 'article.html', context)
+
+def newposts(request):
+    posts = Post.objects.all()
+    profile_info = Profile.objects.all()
+    return render(request, 'post.html', {'posts': posts, 'profile_info': profile_info})
